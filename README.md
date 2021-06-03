@@ -3,7 +3,7 @@ Java JSON:API client for interfacing with MasterFox
 
 ## CRNK
 
-The client is built on top of the CRNK.io library. Which handles all of the
+The client is built on top of the https://github.com/crnk-project/crnk-framework library. Which handles all of the
 heavy lifting for the serialization, request making, etc.
 
 The main units are Resources, which are the Data Transfer Objects that map
