@@ -36,8 +36,6 @@ ee/food/crnk/repositories/FeatureFlagDescriptionRepository.java
  ee.food.crnk.repositories.FeatureFlagDescriptionRepository
 ee/food/crnk/repositories/RestaurantDiscountRepository.java
  ee.food.crnk.repositories.RestaurantDiscountRepository
-ee/food/crnk/queries/GetOrder.java
- ee.food.crnk.queries.GetOrder
 ee/food/crnk/commands/AbstractCommand.java
  ee.food.crnk.commands.AbstractCommand
 ee/food/crnk/resources/MealPlanningRequirementGroup.java
@@ -167,8 +165,6 @@ ee/food/crnk/repositories/DeliveryLocationRepository.java
  ee.food.crnk.repositories.DeliveryLocationRepository
 ee/food/crnk/resources/AppConfiguration.java
  ee.food.crnk.resources.AppConfiguration
-ee/food/crnk/commands/orders/PublishOrder.java
- ee.food.crnk.commands.orders.PublishOrder
 ee/food/crnk/resources/Menu.java
  ee.food.crnk.resources.Menu
 ee/food/crnk/resources/SalesforceSyncError.java
@@ -238,12 +234,17 @@ ee/food/crnk/resources/User.java
  ee.food.crnk.resources.User
 ee/food/crnk/exceptions/unprocessableEntity/UnprocessableEntityMapper.java
  ee.food.crnk.exceptions.unprocessableEntity.UnprocessableEntityMapper
+ee/food/crnk/domains/ordering/commands/PublishOrder.java
+ ee.food.crnk.domains.ordering.commands.PublishOrder
 ee/food/crnk/repositories/TeamRepository.java
  ee.food.crnk.repositories.TeamRepository
 ee/food/crnk/resources/FoodType.java
  ee.food.crnk.resources.FoodType
 ee/food/crnk/resources/Company.java
  ee.food.crnk.resources.Company
+ee/food/crnk/domains/ordering/commands/CreateOrder.java
+ ee.food.crnk.domains.ordering.commands.CreateOrder
+ ee.food.crnk.domains.ordering.commands.CreateOrder$BasicOrderParams
 ee/food/crnk/resources/AccountingLineItem.java
  ee.food.crnk.resources.AccountingLineItem
 ee/food/crnk/repositories/QualifyingQuestionRepository.java
@@ -274,6 +275,8 @@ ee/food/crnk/repositories/PaymentAccountRepository.java
  ee.food.crnk.repositories.PaymentAccountRepository
 ee/food/crnk/repositories/MenuItemRepository.java
  ee.food.crnk.repositories.MenuItemRepository
+ee/food/crnk/domains/ordering/queries/GetOrder.java
+ ee.food.crnk.domains.ordering.queries.GetOrder
 ee/food/crnk/queries/GetRestaurant.java
  ee.food.crnk.queries.GetRestaurant
 ee/food/crnk/repositories/MealPlanningLogRecordRepository.java
@@ -288,22 +291,19 @@ ee/food/crnk/repositories/NotificationLogRepository.java
  ee.food.crnk.repositories.NotificationLogRepository
 ee/food/crnk/repositories/MealPlanningRequirementConstraintRepository.java
  ee.food.crnk.repositories.MealPlanningRequirementConstraintRepository
-ee/food/crnk/resources/Role.java
- ee.food.crnk.resources.Role
 ee/food/crnk/FoodeeClient.java
  ee.food.crnk.FoodeeClient
  ee.food.crnk.FoodeeClient$1
  ee.food.crnk.FoodeeClient$AuthAdapter
  ee.food.crnk.FoodeeClient$AuthAdapter$1
+ee/food/crnk/resources/Role.java
+ ee.food.crnk.resources.Role
 ee/food/crnk/resources/PickupLocation.java
  ee.food.crnk.resources.PickupLocation
 ee/food/crnk/repositories/CompanyRepository.java
  ee.food.crnk.repositories.CompanyRepository
 ee/food/crnk/resources/AreaClosure.java
  ee.food.crnk.resources.AreaClosure
-ee/food/crnk/commands/orders/CreateOrder.java
- ee.food.crnk.commands.orders.CreateOrder
- ee.food.crnk.commands.orders.CreateOrder$BasicOrderParams
 ee/food/crnk/resources/DriverDay.java
  ee.food.crnk.resources.DriverDay
 ee/food/crnk/repositories/DriverWeekRepository.java

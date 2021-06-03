@@ -1,10 +1,10 @@
 package ee.food.crnk;
 
 import com.fasterxml.jackson.databind.util.StdDateFormat;
-import ee.food.crnk.commands.orders.CreateOrder;
-import ee.food.crnk.commands.orders.PublishOrder;
+import ee.food.crnk.domains.ordering.commands.CreateOrder;
+import ee.food.crnk.domains.ordering.commands.PublishOrder;
 import ee.food.crnk.exceptions.unprocessableEntity.UnprocessableEntityMapper;
-import ee.food.crnk.queries.GetActiveRestaurants;
+import ee.food.crnk.domains.restaurants.queries.GetActiveRestaurants;
 import ee.food.crnk.resources.Restaurant;
 import io.crnk.client.CrnkClient;
 import io.crnk.client.http.okhttp.OkHttpAdapter;

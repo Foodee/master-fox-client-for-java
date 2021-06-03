@@ -1,6 +1,7 @@
-package ee.food.crnk.queries;
+package ee.food.crnk.domains.areas.queries;
 
 import ee.food.crnk.FoodeeClient;
+import ee.food.crnk.queries.AbstractQuery;
 import ee.food.crnk.resources.Area;
 import io.crnk.core.queryspec.FilterOperator;
 import io.crnk.core.queryspec.PathSpec;

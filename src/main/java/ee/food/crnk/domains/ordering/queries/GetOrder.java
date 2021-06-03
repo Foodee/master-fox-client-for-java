@@ -1,6 +1,7 @@
-package ee.food.crnk.queries;
+package ee.food.crnk.domains.ordering.queries;
 
 import ee.food.crnk.FoodeeClient;
+import ee.food.crnk.queries.AbstractQuery;
 import ee.food.crnk.resources.Order;
 import io.crnk.core.queryspec.QuerySpec;
 import io.crnk.core.repository.ResourceRepository;
