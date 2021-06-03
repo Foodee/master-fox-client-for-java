@@ -1,0 +1,19 @@
+rootProject.name = 'master-fox-client-for-java'
+
+
+gradle.beforeProject { Project project ->
+    project.with {
+        buildscript {
+            repositories {
+                jcenter()
+                // maven { url 'https://dl.bintray.com/crnk-project/mavenLatest/' }
+            }
+        }
+        repositories {
+            jcenter()
+            // maven { url 'https://dl.bintray.com/crnk-project/mavenLatest/' }
+        }
+    }
+}
+
+

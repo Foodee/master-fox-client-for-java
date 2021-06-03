@@ -1,0 +1,49 @@
+buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation platform("io.crnk:crnk-bom:$CRNK_VERSION")
+    annotationProcessor platform("io.crnk:crnk-bom:$CRNK_VERSION")
+    compileOnly 'io.crnk:crnk-gen-java' // Intellij classpath workaround, not necessary for Gradle
+    annotationProcessor 'io.crnk:crnk-gen-java'
+
+    implementation "io.crnk:crnk-data-facet"
+    implementation "io.crnk:crnk-format-plain-json"
+    implementation "io.crnk:crnk-client"
+
+    // Rest Adapter
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"
+
+    // Data Getters & Setters
+    compileOnly "org.projectlombok:lombok:$LOMBOK_VERSION"
+    testCompileOnly "org.projectlombok:lombok:$LOMBOK_VERSION"
+    annotationProcessor "org.projectlombok:lombok:$LOMBOK_VERSION"
+    testAnnotationProcessor "org.projectlombok:lombok:$LOMBOK_VERSION"
+
+    // utils
+    implementation 'org.reflections:reflections:0.9.12'
+    implementation 'hu.webarticum:tree-printer:1.3'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.29'
+}
+
+test {
+    useJUnitPlatform()
+}
+
