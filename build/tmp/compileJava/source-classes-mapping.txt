@@ -50,16 +50,18 @@ ee/food/crnk/repositories/RestaurantOrderInvoiceRepository.java
  ee.food.crnk.repositories.RestaurantOrderInvoiceRepository
 ee/food/crnk/resources/RestaurantVote.java
  ee.food.crnk.resources.RestaurantVote
-ee/food/crnk/resources/NotificationLog.java
- ee.food.crnk.resources.NotificationLog
 ee/food/crnk/resources/MealPlanningEvent.java
  ee.food.crnk.resources.MealPlanningEvent
+ee/food/crnk/resources/NotificationLog.java
+ ee.food.crnk.resources.NotificationLog
 ee/food/crnk/repositories/MealPlanningEventRepository.java
  ee.food.crnk.repositories.MealPlanningEventRepository
 ee/food/crnk/resources/Invoice.java
  ee.food.crnk.resources.Invoice
 ee/food/crnk/resources/HistorianVersion.java
  ee.food.crnk.resources.HistorianVersion
+ee/food/crnk/domains/restaurants/queries/GetActiveMenu.java
+ ee.food.crnk.domains.restaurants.queries.GetActiveMenu
 ee/food/crnk/resources/MealPlan.java
  ee.food.crnk.resources.MealPlan
 ee/food/crnk/repositories/MenuOptionGroupRepository.java
@@ -68,8 +70,6 @@ ee/food/crnk/repositories/LogisticsArrivalEstimateRepository.java
  ee.food.crnk.repositories.LogisticsArrivalEstimateRepository
 ee/food/crnk/resources/InvoicingLedgerItem.java
  ee.food.crnk.resources.InvoicingLedgerItem
-ee/food/crnk/queries/GetActiveRestaurants.java
- ee.food.crnk.queries.GetActiveRestaurants
 ee/food/crnk/resources/UserFeedback.java
  ee.food.crnk.resources.UserFeedback
 ee/food/crnk/repositories/DeskCaseRepository.java
@@ -82,8 +82,6 @@ ee/food/crnk/resources/MenuItem.java
  ee.food.crnk.resources.MenuItem
 ee/food/crnk/repositories/DeliveryCaseRepository.java
  ee.food.crnk.repositories.DeliveryCaseRepository
-ee/food/crnk/queries/GetClient.java
- ee.food.crnk.queries.GetClient
 ee/food/crnk/repositories/FoodTypeRepository.java
  ee.food.crnk.repositories.FoodTypeRepository
 ee/food/crnk/resources/GiftbitGift.java
@@ -107,10 +105,10 @@ ee/food/crnk/repositories/EventRepository.java
 ee/food/crnk/exceptions/unprocessableEntity/orders/RestaurantAtCapacity.java
  ee.food.crnk.exceptions.unprocessableEntity.orders.RestaurantAtCapacity
  ee.food.crnk.exceptions.unprocessableEntity.orders.RestaurantAtCapacity$1
-ee/food/crnk/resources/SalesforceCase.java
- ee.food.crnk.resources.SalesforceCase
 ee/food/crnk/resources/CurrenciesTransaction.java
  ee.food.crnk.resources.CurrenciesTransaction
+ee/food/crnk/resources/SalesforceCase.java
+ ee.food.crnk.resources.SalesforceCase
 ee/food/crnk/repositories/PickupLocationRepository.java
  ee.food.crnk.repositories.PickupLocationRepository
 ee/food/crnk/repositories/InvoicingLedgerItemRepository.java
@@ -123,14 +121,14 @@ ee/food/crnk/repositories/PaymentCardRepository.java
  ee.food.crnk.repositories.PaymentCardRepository
 ee/food/crnk/resources/MealPlanningReservation.java
  ee.food.crnk.resources.MealPlanningReservation
-ee/food/crnk/queries/GetActiveMenu.java
- ee.food.crnk.queries.GetActiveMenu
 ee/food/crnk/repositories/AccountingLineItemRepository.java
  ee.food.crnk.repositories.AccountingLineItemRepository
 ee/food/crnk/repositories/DiscountCodeRepository.java
  ee.food.crnk.repositories.DiscountCodeRepository
 ee/food/crnk/repositories/MealPlanningRestaurantConstraintRepository.java
  ee.food.crnk.repositories.MealPlanningRestaurantConstraintRepository
+ee/food/crnk/domains/ordering/commands/CreateOrderItem.java
+ ee.food.crnk.domains.ordering.commands.CreateOrderItem
 ee/food/crnk/resources/MealPlanningLogRecord.java
  ee.food.crnk.resources.MealPlanningLogRecord
 ee/food/crnk/repositories/LocationRepository.java
@@ -147,6 +145,8 @@ ee/food/crnk/repositories/DietaryTagRepository.java
  ee.food.crnk.repositories.DietaryTagRepository
 ee/food/crnk/resources/GiftbitError.java
  ee.food.crnk.resources.GiftbitError
+ee/food/crnk/domains/areas/queries/GetActiveAreas.java
+ ee.food.crnk.domains.areas.queries.GetActiveAreas
 ee/food/crnk/resources/LogisticsDelivery.java
  ee.food.crnk.resources.LogisticsDelivery
 ee/food/crnk/repositories/MealPlanningTemplateRepository.java
@@ -173,8 +173,14 @@ ee/food/crnk/resources/MenuOptionItem.java
  ee.food.crnk.resources.MenuOptionItem
 ee/food/crnk/repositories/AreaClosureRepository.java
  ee.food.crnk.repositories.AreaClosureRepository
+ee/food/crnk/Exercise.java
+ ee.food.crnk.Exercise
 ee/food/crnk/resources/SubscriptionPlan.java
  ee.food.crnk.resources.SubscriptionPlan
+ee/food/crnk/domains/restaurants/queries/GetRestaurant.java
+ ee.food.crnk.domains.restaurants.queries.GetRestaurant
+ee/food/crnk/domains/ordering/commands/CreateGroupOrderMember.java
+ ee.food.crnk.domains.ordering.commands.CreateGroupOrderMember
 ee/food/crnk/repositories/OrderItemRepository.java
  ee.food.crnk.repositories.OrderItemRepository
 ee/food/crnk/resources/DriverPing.java
@@ -213,10 +219,10 @@ ee/food/crnk/repositories/GroupOrderMemberRepository.java
  ee.food.crnk.repositories.GroupOrderMemberRepository
 ee/food/crnk/resources/PaymentAccount.java
  ee.food.crnk.resources.PaymentAccount
-ee/food/crnk/resources/DeskCase.java
- ee.food.crnk.resources.DeskCase
 ee/food/crnk/resources/CurrenciesWallet.java
  ee.food.crnk.resources.CurrenciesWallet
+ee/food/crnk/resources/DeskCase.java
+ ee.food.crnk.resources.DeskCase
 ee/food/crnk/resources/ReleaseNote.java
  ee.food.crnk.resources.ReleaseNote
 ee/food/crnk/exceptions/unprocessableEntity/UnprocessableEntityException.java
@@ -249,6 +255,8 @@ ee/food/crnk/resources/AccountingLineItem.java
  ee.food.crnk.resources.AccountingLineItem
 ee/food/crnk/repositories/QualifyingQuestionRepository.java
  ee.food.crnk.repositories.QualifyingQuestionRepository
+ee/food/crnk/domains/restaurants/queries/GetActiveRestaurants.java
+ ee.food.crnk.domains.restaurants.queries.GetActiveRestaurants
 ee/food/crnk/repositories/AppConfigurationRepository.java
  ee.food.crnk.repositories.AppConfigurationRepository
 ee/food/crnk/resources/DietaryTag.java
@@ -277,8 +285,6 @@ ee/food/crnk/repositories/MenuItemRepository.java
  ee.food.crnk.repositories.MenuItemRepository
 ee/food/crnk/domains/ordering/queries/GetOrder.java
  ee.food.crnk.domains.ordering.queries.GetOrder
-ee/food/crnk/queries/GetRestaurant.java
- ee.food.crnk.queries.GetRestaurant
 ee/food/crnk/repositories/MealPlanningLogRecordRepository.java
  ee.food.crnk.repositories.MealPlanningLogRecordRepository
 ee/food/crnk/repositories/ClientRepository.java
@@ -300,6 +306,8 @@ ee/food/crnk/resources/Role.java
  ee.food.crnk.resources.Role
 ee/food/crnk/resources/PickupLocation.java
  ee.food.crnk.resources.PickupLocation
+ee/food/crnk/domains/clients/queries/GetClient.java
+ ee.food.crnk.domains.clients.queries.GetClient
 ee/food/crnk/repositories/CompanyRepository.java
  ee.food.crnk.repositories.CompanyRepository
 ee/food/crnk/resources/AreaClosure.java
@@ -308,10 +316,10 @@ ee/food/crnk/resources/DriverDay.java
  ee.food.crnk.resources.DriverDay
 ee/food/crnk/repositories/DriverWeekRepository.java
  ee.food.crnk.repositories.DriverWeekRepository
-ee/food/crnk/resources/Order.java
- ee.food.crnk.resources.Order
 ee/food/crnk/resources/MealPlanningPreferenceProfile.java
  ee.food.crnk.resources.MealPlanningPreferenceProfile
+ee/food/crnk/resources/Order.java
+ ee.food.crnk.resources.Order
 ee/food/crnk/resources/DriverWeek.java
  ee.food.crnk.resources.DriverWeek
 ee/food/crnk/repositories/UserInviteRepository.java
@@ -326,8 +334,6 @@ ee/food/crnk/repositories/RestaurantCapacityTrancheRepository.java
  ee.food.crnk.repositories.RestaurantCapacityTrancheRepository
 ee/food/crnk/repositories/ServiceTimeRepository.java
  ee.food.crnk.repositories.ServiceTimeRepository
-ee/food/crnk/queries/GetActiveAreas.java
- ee.food.crnk.queries.GetActiveAreas
 ee/food/crnk/resources/MealType.java
  ee.food.crnk.resources.MealType
 ee/food/crnk/resources/Area.java

@@ -95,41 +95,5 @@ public class FoodeeClient {
         return this.jsonApiClient.getRepositoryForType(resourceClass);
     }
 
-    public static void main(String[] args) {
-        BasicConfigurator.configure();
-
-        // Staging
-        FoodeeClient foodeeClient = new FoodeeClient("https://api-staging.food.ee", "8SMJ3XuneAsavFx7VTxujTeGY3oGtXKTHrm03HBz/W52z+SlctRwuUKUW8g=");
-//         LocalHost
-//         FoodeeClient foodeeClient = new FoodeeClient("http://localhost:3000", "So16OMcJfVRm1lEyWqLOqT4jnh6xrQpYvU8gLEj+gLiZPWIPKw9wB00=");
-        ResourceList<Restaurant> all = new GetActiveRestaurants(foodeeClient).invoke();
-//
-//        for (Restaurant restaurant : all) {
-//            System.out.println("Restaurant#" + restaurant.getId() + " - " + restaurant.getName());
-//            System.out.println("Thumbnail " + restaurant.getThumbnailImageUrl());
-//
-//            Menu activeMenu = new GetActiveMenu(foodeeClient, restaurant).invoke();
-//            Utils.printMenu(activeMenu);
-//        }
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        calendar.add(Calendar.DAY_OF_YEAR, 18);
-
-        val restaurant = (Restaurant) all.toArray()[4];
-        val basicOrderParams = new CreateOrder.BasicOrderParams(
-                1L,
-                22347L,
-                restaurant.getId(),
-                20,
-                "Test Event",
-                calendar.getTime()
-        );
-        val createdOrder = new CreateOrder(foodeeClient, basicOrderParams).invoke();
-        System.out.println(createdOrder.getId());
-
-        val publishedOrder = new PublishOrder(foodeeClient, createdOrder.getId()).invoke();
-        System.out.println(createdOrder.getState());
-    }
 
 }
