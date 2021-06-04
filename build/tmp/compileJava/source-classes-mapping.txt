@@ -145,6 +145,8 @@ ee/food/crnk/repositories/DietaryTagRepository.java
  ee.food.crnk.repositories.DietaryTagRepository
 ee/food/crnk/resources/GiftbitError.java
  ee.food.crnk.resources.GiftbitError
+ee/food/crnk/exceptions/unprocessableEntity/UnhandledUnprocessableEntityException.java
+ ee.food.crnk.exceptions.unprocessableEntity.UnhandledUnprocessableEntityException
 ee/food/crnk/domains/areas/queries/GetActiveAreas.java
  ee.food.crnk.domains.areas.queries.GetActiveAreas
 ee/food/crnk/resources/LogisticsDelivery.java

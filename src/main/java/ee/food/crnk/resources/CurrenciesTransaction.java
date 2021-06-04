@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,12 +27,15 @@ public class CurrenciesTransaction {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "created-at")
     private Date createdAt;
 
+    
     @JsonProperty(value = "reason")
     private Object reason;
 
+    
     @JsonProperty(value = "event")
     private String event;
 

@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,24 +27,31 @@ public class InvoicingTaxRate {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "rate")
     private Double rate;
 
+    
     @JsonProperty(value = "description")
     private String description;
 
+    
     @JsonProperty(value = "is-default")
     private Boolean isDefault;
 
+    
     @JsonProperty(value = "tax-code")
     private String taxCode;
 
+    
     @JsonProperty(value = "valid-from")
     private Date validFrom;
 
+    
     @JsonProperty(value = "valid-until")
     private Date validUntil;
 

@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,63 +27,83 @@ public class MealPlanningInstance {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "plan")
     private Object plan;
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "start-of-week")
     private Date startOfWeek;
 
+    
     @JsonProperty(value = "build-group-orders")
     private Boolean buildGroupOrders;
 
+    
     @JsonProperty(value = "new-weight")
     private Integer newWeight;
 
+    
     @JsonProperty(value = "fav-weight")
     private Integer favWeight;
 
+    
     @JsonProperty(value = "popularity-weight")
     private Integer popularityWeight;
 
+    
     @JsonProperty(value = "last-week-weight")
     private Integer lastWeekWeight;
 
+    
     @JsonProperty(value = "last-week-offset")
     private Integer lastWeekOffset;
 
+    
     @JsonProperty(value = "max-uses-per-week")
     private Integer maxUsesPerWeek;
 
+    
     @JsonProperty(value = "max-uses-per-day")
     private Integer maxUsesPerDay;
 
+    
     @JsonProperty(value = "max-uses-per-meal")
     private Integer maxUsesPerMeal;
 
+    
     @JsonProperty(value = "team-members-count")
     private Integer teamMembersCount;
 
+    
     @JsonProperty(value = "allow-repeats")
     private Boolean allowRepeats;
 
+    
     @JsonProperty(value = "use-team-profiles")
     private Boolean useTeamProfiles;
 
+    
     @JsonProperty(value = "ignore-empty-constraints")
     private Boolean ignoreEmptyConstraints;
 
+    
     @JsonProperty(value = "ignored-constraints")
     private Object ignoredConstraints;
 
+    
     @JsonProperty(value = "disabled-preferences")
     private Boolean disabledPreferences;
 
+    
     @JsonProperty(value = "excluded-preference-ids")
     private Object excludedPreferenceIds;
 
+    
     @JsonProperty(value = "is-recurring")
     private Boolean isRecurring;
 

@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,51 +27,67 @@ public class MenuItem {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "created-at")
     private Date createdAt;
 
+    
     @JsonProperty(value = "active")
     private Boolean active;
 
+    
     @JsonProperty(value = "description")
     private Object description;
 
+    
     @JsonProperty(value = "minimum-quantity")
     private Integer minimumQuantity;
 
+    
     @JsonProperty(value = "maximum-quantity")
     private Integer maximumQuantity;
 
+    
     @JsonProperty(value = "minimum-serving")
     private Integer minimumServing;
 
+    
     @JsonProperty(value = "maximum-serving")
     private Integer maximumServing;
 
+    
     @JsonProperty(value = "client-price-cents")
     private Integer clientPriceCents;
 
+    
     @JsonProperty(value = "position")
     private Integer position;
 
+    
     @JsonProperty(value = "restaurant-price-cents")
     private Integer restaurantPriceCents;
 
+    
     @JsonProperty(value = "retail-price-cents")
     private Integer retailPriceCents;
 
+    
     @JsonProperty(value = "internal-description")
     private String internalDescription;
 
+    
     @JsonProperty(value = "tax-rate-id")
     private Integer taxRateId;
 
+    
     @JsonProperty(value = "taxable")
     private Boolean taxable;
 
+    
     @JsonProperty(value = "capacity-units")
     private Float capacityUnits;
 

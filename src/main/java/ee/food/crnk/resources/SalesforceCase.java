@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,15 +27,19 @@ public class SalesforceCase {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "status")
     private String status;
 
+    
     @JsonProperty(value = "origin")
     private String origin;
 
+    
     @JsonProperty(value = "description")
     private String description;
 
+    
     @JsonProperty(value = "subject")
     private String subject;
 

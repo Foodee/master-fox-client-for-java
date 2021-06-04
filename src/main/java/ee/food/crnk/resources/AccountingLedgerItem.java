@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,36 +27,47 @@ public class AccountingLedgerItem {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "identifier")
     private String identifier;
 
+    
     @JsonProperty(value = "status")
     private String status;
 
+    
     @JsonProperty(value = "issue-date")
     private Date issueDate;
 
+    
     @JsonProperty(value = "currency")
     private String currency;
 
+    
     @JsonProperty(value = "total-amount")
     private Double totalAmount;
 
+    
     @JsonProperty(value = "tax-amount")
     private Double taxAmount;
 
+    
     @JsonProperty(value = "description")
     private String description;
 
+    
     @JsonProperty(value = "due-date")
     private Date dueDate;
 
+    
     @JsonProperty(value = "xero-id")
     private UUID xeroId;
 
+    
     @JsonProperty(value = "created-at")
     private Date createdAt;
 
+    
     @JsonProperty(value = "updated-at")
     private Date updatedAt;
 

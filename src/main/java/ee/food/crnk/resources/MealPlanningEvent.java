@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,30 +27,39 @@ public class MealPlanningEvent {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "lead-time")
     private Float leadTime;
 
+    
     @JsonProperty(value = "number-of-people")
     private Integer numberOfPeople;
 
+    
     @JsonProperty(value = "deliver-at")
     private Date deliverAt;
 
+    
     @JsonProperty(value = "pickup-at")
     private Date pickupAt;
 
+    
     @JsonProperty(value = "meal-id")
     private UUID mealId;
 
+    
     @JsonProperty(value = "user-order-map")
     private Object userOrderMap;
 
+    
     @JsonProperty(value = "created-from-template")
     private Boolean createdFromTemplate;
 
+    
     @JsonProperty(value = "usage-report")
     private Object usageReport;
 

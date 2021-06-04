@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,21 +27,27 @@ public class MenuOptionItem {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "client-price-cents")
     private Double clientPriceCents;
 
+    
     @JsonProperty(value = "deleted-at")
     private Date deletedAt;
 
+    
     @JsonProperty(value = "restaurant-price-cents")
     private Double restaurantPriceCents;
 
+    
     @JsonProperty(value = "retail-price-cents")
     private Double retailPriceCents;
 
+    
     @JsonProperty(value = "position")
     private Integer position;
 

@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,87 +27,115 @@ public class Client {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "notes")
     private Object notes;
 
+    
     @JsonProperty(value = "very-late-score")
     private Object veryLateScore;
 
+    
     @JsonProperty(value = "actual-segment")
     private Integer actualSegment;
 
+    
     @JsonProperty(value = "sales-support-client")
     private Boolean salesSupportClient;
 
+    
     @JsonProperty(value = "updated-at")
     private Date updatedAt;
 
+    
     @JsonProperty(value = "xero-contact-id")
     private UUID xeroContactId;
 
+    
     @JsonProperty(value = "xero-synchronized-at")
     private Date xeroSynchronizedAt;
 
+    
     @JsonProperty(value = "waive-delivery-fee")
     private Boolean waiveDeliveryFee;
 
+    
     @JsonProperty(value = "waive-service-fee")
     private Boolean waiveServiceFee;
 
+    
     @JsonProperty(value = "waive-delivery-fee-accounting-code")
     private String waiveDeliveryFeeAccountingCode;
 
+    
     @JsonProperty(value = "waive-service-fee-accounting-code")
     private String waiveServiceFeeAccountingCode;
 
+    
     @JsonProperty(value = "waive-delivery-fee-description")
     private String waiveDeliveryFeeDescription;
 
+    
     @JsonProperty(value = "waive-service-fee-description")
     private String waiveServiceFeeDescription;
 
+    
     @JsonProperty(value = "uuid")
     private UUID uuid;
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "legal-name")
     private String legalName;
 
+    
     @JsonProperty(value = "delivery-notes")
     private Object deliveryNotes;
 
+    
     @JsonProperty(value = "plan")
     private String plan;
 
+    
     @JsonProperty(value = "terms")
     private Boolean terms;
 
+    
     @JsonProperty(value = "term-days")
     private Integer termDays;
 
+    
     @JsonProperty(value = "api-token")
     private String apiToken;
 
+    
     @JsonProperty(value = "is-paying-service-fee")
     private Boolean isPayingServiceFee;
 
+    
     @JsonProperty(value = "cutlery-preference")
     private String cutleryPreference;
 
+    
     @JsonProperty(value = "manage-teams")
     private Boolean manageTeams;
 
+    
     @JsonProperty(value = "limit-share-notifications")
     private Boolean limitShareNotifications;
 
+    
     @JsonProperty(value = "storage")
     private Object storage;
 
+    
     @JsonProperty(value = "state")
     private String state;
 
+    
     @JsonProperty(value = "orders-count")
     private Integer ordersCount;
 

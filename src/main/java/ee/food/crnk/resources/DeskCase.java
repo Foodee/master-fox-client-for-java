@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,21 +27,27 @@ public class DeskCase {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "case-request")
     private String caseRequest;
 
+    
     @JsonProperty(value = "case-id")
     private Integer caseId;
 
+    
     @JsonProperty(value = "case-message")
     private String caseMessage;
 
+    
     @JsonProperty(value = "case-status")
     private String caseStatus;
 
+    
     @JsonProperty(value = "case-value")
     private Integer caseValue;
 
+    
     @JsonProperty(value = "created-at")
     private Date createdAt;
 

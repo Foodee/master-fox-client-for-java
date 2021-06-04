@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,24 +27,31 @@ public class Contact {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "first-name")
     private String firstName;
 
+    
     @JsonProperty(value = "last-name")
     private String lastName;
 
+    
     @JsonProperty(value = "email")
     private String email;
 
+    
     @JsonProperty(value = "extension")
     private String extension;
 
+    
     @JsonProperty(value = "phone-number")
     private String phoneNumber;
 
+    
     @JsonProperty(value = "sms-number")
     private String smsNumber;
 
+    
     @JsonProperty(value = "updated-at")
     private Date updatedAt;
 

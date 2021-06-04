@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,30 +27,39 @@ public class PaymentCard {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "position")
     private Integer position;
 
+    
     @JsonProperty(value = "last-four-digits")
     private Integer lastFourDigits;
 
+    
     @JsonProperty(value = "expiry-month")
     private Integer expiryMonth;
 
+    
     @JsonProperty(value = "expiry-year")
     private Integer expiryYear;
 
+    
     @JsonProperty(value = "card-type")
     private String cardType;
 
+    
     @JsonProperty(value = "default")
     private Boolean isDefault;
 
+    
     @JsonProperty(value = "name-on-card")
     private String nameOnCard;
 
+    
     @JsonProperty(value = "nickname")
     private String nickname;
 
+    
     @JsonProperty(value = "removed")
     private Boolean removed;
 

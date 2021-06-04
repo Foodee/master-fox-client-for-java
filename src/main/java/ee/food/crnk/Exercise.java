@@ -1,6 +1,8 @@
 package ee.food.crnk;
 
+import ee.food.crnk.domains.ordering.commands.CreateGroupOrderMember;
 import ee.food.crnk.domains.ordering.commands.CreateOrder;
+import ee.food.crnk.domains.ordering.commands.CreateOrderItem;
 import ee.food.crnk.domains.ordering.commands.PublishOrder;
 import ee.food.crnk.domains.restaurants.queries.GetActiveMenu;
 import ee.food.crnk.domains.restaurants.queries.GetActiveRestaurants;
@@ -11,6 +13,7 @@ import lombok.val;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Optional;
 
 public class Exercise {
 
@@ -22,12 +25,12 @@ public class Exercise {
 //         LocalHost
 //         FoodeeClient foodeeClient = new FoodeeClient("http://localhost:3000", "So16OMcJfVRm1lEyWqLOqT4jnh6xrQpYvU8gLEj+gLiZPWIPKw9wB00=");
         ResourceList<Restaurant> all = new GetActiveRestaurants(foodeeClient).invoke();
-        printAllRestaurants(foodeeClient, all);
+//        printAllRestaurants(foodeeClient, all);
 
 
         // NOTE: If you encounter a capacity error while exercising this endpoint
         // change the array index
-        val restaurant = (Restaurant) all.toArray()[4];
+        val restaurant = (Restaurant) all.toArray()[9];
 
         runCreateOrder(foodeeClient, restaurant);
     }
@@ -35,7 +38,7 @@ public class Exercise {
     private static void runCreateOrder(FoodeeClient foodeeClient, Restaurant restaurant) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
-        calendar.add(Calendar.DAY_OF_YEAR, 18);
+        calendar.add(Calendar.DAY_OF_YEAR, 24);
 
         val basicOrderParams = new CreateOrder.BasicOrderParams(
                 1L,
@@ -49,7 +52,11 @@ public class Exercise {
         System.out.println(createdOrder.getId());
 
         val publishedOrder = new PublishOrder(foodeeClient, createdOrder.getId()).invoke();
-        System.out.println(createdOrder.getState());
+        System.out.println(publishedOrder.getState());
+
+        val gom = new CreateGroupOrderMember(foodeeClient, publishedOrder.getId(), "Test Person", "test@test.com").invoke();
+        val menuItem = restaurant.getActiveMenu().getMenuItems().stream().findFirst().get();
+        val orderItem = new CreateOrderItem(foodeeClient, 1, publishedOrder.getId(), menuItem.getId(), gom.getId()).invoke();
     }
 
     private static void printAllRestaurants(FoodeeClient foodeeClient, ResourceList<Restaurant> all) {

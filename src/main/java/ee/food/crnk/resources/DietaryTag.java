@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,18 +27,23 @@ public class DietaryTag {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "slug")
     private String slug;
 
+    
     @JsonProperty(value = "abbreviation")
     private String abbreviation;
 
+    
     @JsonProperty(value = "color")
     private String color;
 
+    
     @JsonProperty(value = "tag-type")
     private String tagType;
 

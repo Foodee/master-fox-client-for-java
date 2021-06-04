@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,48 +27,63 @@ public class Area {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "active")
     private Boolean active;
 
+    
     @JsonProperty(value = "country")
     private String country;
 
+    
     @JsonProperty(value = "province")
     private String province;
 
+    
     @JsonProperty(value = "city")
     private String city;
 
+    
     @JsonProperty(value = "district")
     private String district;
 
+    
     @JsonProperty(value = "slug")
     private String slug;
 
+    
     @JsonProperty(value = "iso-time-zone")
     private String isoTimeZone;
 
+    
     @JsonProperty(value = "delivery-lead-time")
     private Integer deliveryLeadTime;
 
+    
     @JsonProperty(value = "park-and-load-time")
     private Integer parkAndLoadTime;
 
+    
     @JsonProperty(value = "currency")
     private String currency;
 
+    
     @JsonProperty(value = "delivery-zone")
     private Map<String, Object> deliveryZone;
 
+    
     @JsonProperty(value = "created-at")
     private Date createdAt;
 
+    
     @JsonProperty(value = "prefix")
     private String prefix;
 
+    
     @JsonProperty(value = "cover-image-url")
     private String coverImageUrl;
 
+    
     @JsonProperty(value = "is-internal")
     private Boolean isInternal;
 

@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,24 +27,31 @@ public class OrderItem {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "quantity")
     private Integer quantity;
 
+    
     @JsonProperty(value = "notes")
     private String notes;
 
+    
     @JsonProperty(value = "client-price-cents")
     private Integer clientPriceCents;
 
+    
     @JsonProperty(value = "taxable")
     private Boolean taxable;
 
+    
     @JsonProperty(value = "override-prices")
     private Boolean overridePrices;
 
+    
     @JsonProperty(value = "capacity-units")
     private Float capacityUnits;
 
+    
     @JsonProperty(value = "restaurant-price-cents")
     private Integer restaurantPriceCents;
 

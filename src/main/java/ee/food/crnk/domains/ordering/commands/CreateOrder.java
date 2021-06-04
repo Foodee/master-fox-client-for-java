@@ -14,7 +14,7 @@ import lombok.var;
 import java.util.Calendar;
 import java.util.Date;
 
-public class CreateOrder extends AbstractCommand {
+public class CreateOrder extends AbstractCommand<Order> {
 
     private final ResourceRepository<Order, Object> orderRepository;
     private final BasicOrderParams basicOrderParams;
@@ -70,9 +70,9 @@ public class CreateOrder extends AbstractCommand {
         val client = this.getClient.invoke();
         val restaurant = this.getRestaurant.invoke();
 
-        order.setDeadlineAt(basicOrderParams.pickupAt);
-        order.setPickupAt(basicOrderParams.deliverAt);
-        order.setDeliverAt(basicOrderParams.deadlineAt);
+        order.setDeadlineAt(basicOrderParams.deadlineAt);
+        order.setPickupAt(basicOrderParams.pickupAt);
+        order.setDeliverAt(basicOrderParams.deliverAt);
         order.setName(basicOrderParams.eventName);
         order.setNumberOfPeople(basicOrderParams.numberOfPeople);
         order.setPerPersonBudget(2000.00f);
@@ -88,6 +88,7 @@ public class CreateOrder extends AbstractCommand {
         order.setRestaurantLocation(restaurant.getPickupLocations().stream().findFirst().get().getLocation());
         order = orderRepository.create(order);
         System.out.printf("Find the order at: https://app-staging.food.ee/team-order/%s%n", order.getUrlSafeId());
+        System.out.printf("Find the order at: https://concierge-staging.food.ee/starfox/orders/%s%n", order.getId());
 
         return order;
     }

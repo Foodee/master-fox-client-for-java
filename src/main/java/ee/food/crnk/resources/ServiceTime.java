@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,18 +27,23 @@ public class ServiceTime {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "weekday")
     private Integer weekday;
 
+    
     @JsonProperty(value = "delivery-start-time")
     private Object deliveryStartTime;
 
+    
     @JsonProperty(value = "delivery-end-time")
     private Object deliveryEndTime;
 
+    
     @JsonProperty(value = "pickup-start-time")
     private Object pickupStartTime;
 
+    
     @JsonProperty(value = "pickup-end-time")
     private Object pickupEndTime;
 

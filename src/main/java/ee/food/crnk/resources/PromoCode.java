@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,36 +27,47 @@ public class PromoCode {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "code")
     private String code;
 
+    
     @JsonProperty(value = "amount")
     private Double amount;
 
+    
     @JsonProperty(value = "amount-type")
     private String amountType;
 
+    
     @JsonProperty(value = "expires-at")
     private Date expiresAt;
 
+    
     @JsonProperty(value = "internal")
     private Boolean internal;
 
+    
     @JsonProperty(value = "allow-multiple-client-uses")
     private Boolean allowMultipleClientUses;
 
+    
     @JsonProperty(value = "description")
     private Object description;
 
+    
     @JsonProperty(value = "removed")
     private Boolean removed;
 
+    
     @JsonProperty(value = "starts-at")
     private Date startsAt;
 
+    
     @JsonProperty(value = "client-accounting-code")
     private Integer clientAccountingCode;
 
+    
     @JsonProperty(value = "restaurant-accounting-code")
     private Integer restaurantAccountingCode;
 

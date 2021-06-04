@@ -12,6 +12,7 @@ import io.crnk.client.http.okhttp.OkHttpAdapterListener;
 import io.crnk.core.module.Module;
 import io.crnk.core.repository.ResourceRepository;
 import io.crnk.core.resource.list.ResourceList;
+import lombok.Data;
 import lombok.val;
 import okhttp3.*;
 import org.apache.log4j.BasicConfigurator;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
+@Data
 public class FoodeeClient {
 
     private class AuthAdapter implements OkHttpAdapterListener {

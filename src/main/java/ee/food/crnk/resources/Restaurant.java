@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,102 +27,135 @@ public class Restaurant {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "pickup-notes")
     private Object pickupNotes;
 
+    
     @JsonProperty(value = "enterprise-request")
     private String enterpriseRequest;
 
+    
     @JsonProperty(value = "is-paying-admin-fee")
     private Boolean isPayingAdminFee;
 
+    
     @JsonProperty(value = "receives-daily-order-summary")
     private Boolean receivesDailyOrderSummary;
 
+    
     @JsonProperty(value = "receives-sms")
     private Boolean receivesSMS;
 
+    
     @JsonProperty(value = "uuid")
     private UUID uuid;
 
+    
     @JsonProperty(value = "xero-contact-id")
     private UUID xeroContactId;
 
+    
     @JsonProperty(value = "xero-synchronized-at")
     private Date xeroSynchronizedAt;
 
+    
     @JsonProperty(value = "created-at")
     private Date createdAt;
 
+    
     @JsonProperty(value = "updated-at")
     private Date updatedAt;
 
+    
     @JsonProperty(value = "active")
     private Boolean active;
 
+    
     @JsonProperty(value = "internal")
     private Boolean internal;
 
+    
     @JsonProperty(value = "is-exclusive")
     private Boolean isExclusive;
 
+    
     @JsonProperty(value = "can-group-order")
     private Boolean canGroupOrder;
 
+    
     @JsonProperty(value = "can-same-day-order")
     private Boolean canSameDayOrder;
 
+    
     @JsonProperty(value = "can-same-day-team-order")
     private Boolean canSameDayTeamOrder;
 
+    
     @JsonProperty(value = "can-enterprise-order")
     private Boolean canEnterpriseOrder;
 
+    
     @JsonProperty(value = "can-same-day-enterprise-order")
     private Boolean canSameDayEnterpriseOrder;
 
+    
     @JsonProperty(value = "same-day-hours-in-advance")
     private Float sameDayHoursInAdvance;
 
+    
     @JsonProperty(value = "hours-in-advance")
     private Float hoursInAdvance;
 
+    
     @JsonProperty(value = "enterprise-hours-in-advance")
     private Float enterpriseHoursInAdvance;
 
+    
     @JsonProperty(value = "minimum-order")
     private Integer minimumOrder;
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "legal-name")
     private String legalName;
 
+    
     @JsonProperty(value = "dietary-tags-counts")
     private Object dietaryTagsCounts;
 
+    
     @JsonProperty(value = "slug")
     private String slug;
 
+    
     @JsonProperty(value = "subtitle")
     private String subtitle;
 
+    
     @JsonProperty(value = "thumbnail-image-url")
     private String thumbnailImageUrl;
 
+    
     @JsonProperty(value = "cover-image-url")
     private String coverImageUrl;
 
+    
     @JsonProperty(value = "marketing-title")
     private String marketingTitle;
 
+    
     @JsonProperty(value = "marketing-description")
     private String marketingDescription;
 
+    
     @JsonProperty(value = "coming-soon")
     private Boolean comingSoon;
 
+    
     @JsonProperty(value = "counts")
     private Object counts;
 

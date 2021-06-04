@@ -24,8 +24,10 @@ public class GetActiveMenu extends AbstractQuery {
 
     public Menu invoke() {
         val querySpec = new QuerySpec(Menu.class);
-        querySpec.includeRelation(Arrays.asList("menuGroups", "menuItems", "menuOptionGroups", "menuOptionItems", "dietaryTags"));
+        querySpec.includeRelation(Arrays.asList("menuGroups", "foodTypes"));
+        querySpec.includeRelation(Arrays.asList("menuGroups", "mealTypes"));
         querySpec.includeRelation(Arrays.asList("menuGroups", "menuItems", "dietaryTags"));
+        querySpec.includeRelation(Arrays.asList("menuGroups", "menuItems", "menuOptionGroups", "menuOptionItems", "dietaryTags"));
         return this.menuRepository.findOne(restaurant.getActiveMenu().getId(), querySpec);
     }
 }

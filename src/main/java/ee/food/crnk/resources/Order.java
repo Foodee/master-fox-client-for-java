@@ -27,56 +27,74 @@ public class Order {
      * Attributes
      ********************************************/
 
+
     @JsonProperty(value = "alert-status")
     private String alertStatus;
+
 
     @JsonProperty(value = "allows-guests")
     private Boolean allowsGuests;
 
+
     @JsonProperty(value = "allows-pay-out-of-pocket")
     private Boolean allowsPayOutOfPocket;
+
 
     @JsonProperty(value = "bowtie-service-fee")
     private Double bowtieServiceFee;
 
+
     @JsonProperty(value = "created-at")
     private Date createdAt;
+
 
     @JsonProperty(value = "deadline-at")
     private Date deadlineAt;
 
+
     @JsonProperty(value = "deliver-at")
     private Date deliverAt;
+
 
     @JsonProperty(value = "deliver-on")
     private Date deliverOn;
 
+
     @JsonProperty(value = "delivered-at")
     private Date deliveredAt;
+
 
     @JsonProperty(value = "expires-at")
     private Date expiresAt;
 
+
     @JsonProperty(value = "opens-at")
     private Date opensAt;
+
 
     @JsonProperty(value = "flag")
     private Boolean flag;
 
+
     @JsonProperty(value = "guest-list")
     private List<Object> guestList;
+
 
     @JsonProperty(value = "budget-type")
     private String budgetType;
 
+
     @JsonProperty(value = "duplicated-from-id")
     private Integer duplicatedFromId;
+
 
     @JsonProperty(value = "ignores-capacity-limit")
     private Boolean ignoresCapacityLimit;
 
+
     @JsonProperty(value = "is-foodhall")
     private Boolean isFoodhall;
+
 
     @JsonProperty(value = "is-same-day")
     private Boolean isSameDay;
@@ -85,41 +103,54 @@ public class Order {
     @JsonProperty(value = "max-number-of-people")
     private Integer maxNumberOfPeople;
 
+
     @JsonProperty(value = "valid-members-count")
     private Integer validMembersCount;
+
 
     @JsonProperty(value = "name")
     private String name;
 
+
     @JsonProperty(value = "order-type")
     private String orderType;
+
 
     @JsonProperty(value = "monitoring-notes")
     private Object monitoringNotes;
 
+
     @JsonProperty(value = "notes")
     private Object notes;
+
 
     @JsonProperty(value = "order-images")
     private List<String> orderImages;
 
+
     @JsonProperty(value = "number-of-people")
     private Integer numberOfPeople;
+
 
     @JsonProperty(value = "pay-out-of-pocket-fee")
     private Double payOutOfPocketFee;
 
+
     @JsonProperty(value = "per-person-budget")
     private Float perPersonBudget;
+
 
     @JsonProperty(value = "picked-up-at")
     private Date pickedUpAt;
 
+
     @JsonProperty(value = "pickup-at")
     private Date pickupAt;
 
+
     @JsonProperty(value = "set-menu")
     private Object setMenu;
+
 
     @JsonProperty(value = "state")
     private String state;
@@ -128,113 +159,150 @@ public class Order {
     @JsonProperty(value = "total-amount")
     private Double totalAmount;
 
+
     @JsonProperty(value = "restaurant-total-amount")
     private Double restaurantTotalAmount;
+
 
     @JsonProperty(value = "updated-at")
     private Date updatedAt;
 
+
     @JsonProperty(value = "client-location-id")
     private Integer clientLocationId;
+
 
     @JsonProperty(value = "restaurant-poll-deadline-at")
     private Date restaurantPollDeadlineAt;
 
+
     @JsonProperty(value = "is-autosave")
     private Boolean isAutosave;
+
 
     @JsonProperty(value = "large-order")
     private Boolean largeOrder;
 
+
     @JsonProperty(value = "outside-hours")
     private Boolean outsideHours;
+
 
     @JsonProperty(value = "out-of-zone")
     private Boolean outOfZone;
 
+
     @JsonProperty(value = "is-meal-plan-order")
     private Boolean isMealPlanOrder;
+
 
     @JsonProperty(value = "orders-in-tranche")
     private Integer ordersInTranche;
 
+
     @JsonProperty(value = "tranche")
     private String tranche;
+
 
     @JsonProperty(value = "client-confirmation-id")
     private UUID clientConfirmationId;
 
+
     @JsonProperty(value = "restaurant-confirmation-id")
     private UUID restaurantConfirmationId;
+
 
     @JsonProperty(value = "third-party-logistics-exception")
     private String thirdPartyLogisticsException;
 
+
     @JsonProperty(value = "is-bookmark")
     private Boolean isBookmark;
+
 
     @JsonProperty(value = "bookmark-expires-at")
     private Date bookmarkExpiresAt;
 
+
     @JsonProperty(value = "bookmark-name")
     private String bookmarkName;
+
 
     @JsonProperty(value = "url-safe-id")
     private String urlSafeId;
 
+
     @JsonProperty(value = "uuid")
     private UUID uuid;
+
 
     @JsonProperty(value = "online")
     private Boolean online;
 
+
     @JsonProperty(value = "cutlery-preference")
     private String cutleryPreference;
+
 
     @JsonProperty(value = "waive-delivery-fee")
     private Boolean waiveDeliveryFee;
 
+
     @JsonProperty(value = "waive-service-fee")
     private Boolean waiveServiceFee;
+
 
     @JsonProperty(value = "ordered-count")
     private Integer orderedCount;
 
+
     @JsonProperty(value = "member-count")
     private Integer memberCount;
+
 
     @JsonProperty(value = "is-template")
     private Boolean isTemplate;
 
+
     @JsonProperty(value = "state-event")
     private String stateEvent;
+
 
     @JsonProperty(value = "delivery-estimate")
     private Object deliveryEstimate;
 
+
     @JsonProperty(value = "override-pickup-at-adjustment")
     private Boolean overridePickupAtAdjustment;
+
 
     @JsonProperty(value = "logistics-type")
     private Integer logisticsType;
 
+
     @JsonProperty(value = "third-party-logistics-id")
     private String thirdPartyLogisticsId;
+
 
     @JsonProperty(value = "third-party-logistics-tracking-url")
     private String thirdPartyLogisticsTrackingUrl;
 
+
     @JsonProperty(value = "synced-with-third-party-logistics-at")
     private Date syncedWithThirdPartyLogisticsAt;
+
 
     @JsonProperty(value = "waive-delivery-fee-accounting-code")
     private String waiveDeliveryFeeAccountingCode;
 
+
     @JsonProperty(value = "waive-service-fee-accounting-code")
     private String waiveServiceFeeAccountingCode;
 
+
     @JsonProperty(value = "waive-delivery-fee-description")
     private String waiveDeliveryFeeDescription;
+
 
     @JsonProperty(value = "waive-service-fee-description")
     private String waiveServiceFeeDescription;

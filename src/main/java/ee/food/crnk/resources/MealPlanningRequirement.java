@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,21 +27,27 @@ public class MealPlanningRequirement {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "number-of-options")
     private Integer numberOfOptions;
 
+    
     @JsonProperty(value = "number-of-people")
     private Integer numberOfPeople;
 
+    
     @JsonProperty(value = "max-price")
     private Float maxPrice;
 
+    
     @JsonProperty(value = "min-price")
     private Float minPrice;
 
+    
     @JsonProperty(value = "active")
     private Boolean active;
 

@@ -20,7 +20,6 @@ public class GetOrder extends AbstractQuery {
     }
 
     public Order invoke() {
-        val querySpec = new QuerySpec(Order.class);
-        return this.orderRepository.findOne(orderId, querySpec);
+        return this.orderRepository.findOne(orderId, new QuerySpec(Order.class));
     }
 }

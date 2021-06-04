@@ -7,7 +7,7 @@ import ee.food.crnk.resources.Order;
 import io.crnk.core.repository.ResourceRepository;
 import lombok.var;
 
-public class PublishOrder extends AbstractCommand {
+public class PublishOrder extends AbstractCommand<Order> {
 
     private final ResourceRepository<Order, Object> orderRepository;
     private final GetOrder getOrder;
@@ -27,6 +27,7 @@ public class PublishOrder extends AbstractCommand {
         order = this.orderRepository.save(order);
 
         System.out.printf("Find the order at: https://app-staging.food.ee/team-order/%s%n", order.getUrlSafeId());
+        System.out.printf("Find the order at: https://concierge-staging.food.ee/starfox/orders/%s%n", order.getId());
 
         return order;
     }

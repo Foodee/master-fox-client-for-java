@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,24 +27,31 @@ public class Team {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "accounting-code")
     private String accountingCode;
 
+    
     @JsonProperty(value = "is-active")
     private Boolean isActive;
 
+    
     @JsonProperty(value = "is-default")
     private Boolean isDefault;
 
+    
     @JsonProperty(value = "managed-internally")
     private Boolean managedInternally;
 
+    
     @JsonProperty(value = "per-person-budget")
     private Float perPersonBudget;
 
+    
     @JsonProperty(value = "dietary-composition")
     private Object dietaryComposition;
 

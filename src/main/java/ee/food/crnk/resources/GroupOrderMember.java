@@ -1,7 +1,7 @@
 package ee.food.crnk.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.crnk.core.resource.annotations.JsonApiId;
 import io.crnk.core.resource.annotations.JsonApiRelation;
 import io.crnk.core.resource.annotations.JsonApiResource;
@@ -27,36 +27,47 @@ public class GroupOrderMember {
      * Attributes
      ********************************************/
 
+    
     @JsonProperty(value = "name")
     private String name;
 
+    
     @JsonProperty(value = "email")
     private String email;
 
+    
     @JsonProperty(value = "phone-number")
     private String phoneNumber;
 
+    
     @JsonProperty(value = "department")
     private String department;
 
+    
     @JsonProperty(value = "terms-accepted-at")
     private Date termsAcceptedAt;
 
+    
     @JsonProperty(value = "stripe-charge-token")
     private String stripeChargeToken;
 
+    
     @JsonProperty(value = "number-of-people")
     private Integer numberOfPeople;
 
+    
     @JsonProperty(value = "notify-by-email-on-delivery")
     private Boolean notifyByEmailOnDelivery;
 
+    
     @JsonProperty(value = "notify-by-sms-on-delivery")
     private Boolean notifyBySMSOnDelivery;
 
+    
     @JsonProperty(value = "notification-preferences")
     private Object notificationPreferences;
 
+    
     @JsonProperty(value = "custom-fields")
     private Object customFields;
 
