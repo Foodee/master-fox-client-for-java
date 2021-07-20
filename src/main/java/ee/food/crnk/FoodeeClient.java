@@ -38,6 +38,7 @@ public class FoodeeClient {
         public void onBuild(OkHttpClient.Builder builder) {
             val apiToken = this.apiToken;
 
+
             builder.addInterceptor(new Interceptor() {
                 @NotNull
                 @Override

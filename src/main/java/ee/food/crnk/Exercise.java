@@ -30,7 +30,7 @@ public class Exercise {
 
         // NOTE: If you encounter a capacity error while exercising this endpoint
         // change the array index
-        val restaurant = (Restaurant) all.toArray()[9];
+        val restaurant = (Restaurant) all.toArray()[10];
 
         runCreateOrder(foodeeClient, restaurant);
     }
@@ -38,7 +38,7 @@ public class Exercise {
     private static void runCreateOrder(FoodeeClient foodeeClient, Restaurant restaurant) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
-        calendar.add(Calendar.DAY_OF_YEAR, 24);
+        calendar.add(Calendar.DAY_OF_YEAR, 34);
 
         val basicOrderParams = new CreateOrder.BasicOrderParams(
                 1L,

@@ -6,6 +6,7 @@ buildscript {
 
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'org.example'
@@ -47,3 +48,14 @@ test {
     useJUnitPlatform()
 }
 
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            groupId = 'ee.food'
+//            artifactId = 'masterFoxClient'
+//            version = '1.0.0'
+//
+//            from components.java
+//        }
+//    }
+//}

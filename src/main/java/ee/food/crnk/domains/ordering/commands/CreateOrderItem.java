@@ -58,8 +58,8 @@ public class CreateOrderItem extends AbstractCommand<OrderItem> {
 
         this.groupOrderMemberId.ifPresent(aLong -> orderItem.setGroupOrderMember(GroupOrderMember.id(aLong)));
 
-        logger.info("Creating OrderItem with the following params");
-        logger.info(orderItem.toString());
+        logger.info("Creating OrderItem for MenuItem " + this.menuItemId);
+
 
         val createdOrderItem = this.orderItemRepository.create(orderItem);
 

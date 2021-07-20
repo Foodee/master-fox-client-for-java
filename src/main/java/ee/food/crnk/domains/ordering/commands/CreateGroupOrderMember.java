@@ -53,8 +53,7 @@ public class CreateGroupOrderMember extends AbstractCommand<GroupOrderMember> {
 
         this.userId.ifPresent(aLong -> gom.setUser(User.id(aLong)));
 
-        logger.info("Creating GroupOrderMember with the following params");
-        logger.info(gom.toString());
+        logger.info("Creating GroupOrderMember " + this.fullName);
 
         return this.groupOrderMemberRepository.create(gom);
     }
