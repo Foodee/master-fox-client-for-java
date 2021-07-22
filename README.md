@@ -13,3 +13,8 @@ of REST.
 ## Exercising
 
 Since this is currently a work in progress, you can exercise the library by running the Exercise class.
+
+
+## Foodee Ordering Process Flow
+
+

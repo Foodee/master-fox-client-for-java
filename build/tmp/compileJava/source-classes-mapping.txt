@@ -1,3 +1,5 @@
+ee/food/crnk/domains/ordering/OrderState.java
+ ee.food.crnk.domains.ordering.OrderState
 ee/food/crnk/resources/GiftbitCard.java
  ee.food.crnk.resources.GiftbitCard
 ee/food/crnk/repositories/ClientOrderInvoiceRepository.java
@@ -263,6 +265,8 @@ ee/food/crnk/repositories/AppConfigurationRepository.java
  ee.food.crnk.repositories.AppConfigurationRepository
 ee/food/crnk/resources/DietaryTag.java
  ee.food.crnk.resources.DietaryTag
+ee/food/crnk/domains/ordering/queries/GetClientOrders.java
+ ee.food.crnk.domains.ordering.queries.GetClientOrders
 ee/food/crnk/resources/PaymentCard.java
  ee.food.crnk.resources.PaymentCard
 ee/food/crnk/resources/ClientSignup.java
@@ -336,6 +340,8 @@ ee/food/crnk/repositories/RestaurantCapacityTrancheRepository.java
  ee.food.crnk.repositories.RestaurantCapacityTrancheRepository
 ee/food/crnk/repositories/ServiceTimeRepository.java
  ee.food.crnk.repositories.ServiceTimeRepository
+ee/food/crnk/repositories/ClientOrdersRepository.java
+ ee.food.crnk.repositories.ClientOrdersRepository
 ee/food/crnk/resources/MealType.java
  ee.food.crnk.resources.MealType
 ee/food/crnk/resources/Area.java

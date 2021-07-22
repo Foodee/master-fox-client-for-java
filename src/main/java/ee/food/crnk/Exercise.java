@@ -1,11 +1,13 @@
 package ee.food.crnk;
 
+import ee.food.crnk.domains.clients.queries.GetClient;
+import ee.food.crnk.domains.ordering.OrderState;
 import ee.food.crnk.domains.ordering.commands.CreateGroupOrderMember;
 import ee.food.crnk.domains.ordering.commands.CreateOrder;
 import ee.food.crnk.domains.ordering.commands.CreateOrderItem;
 import ee.food.crnk.domains.ordering.commands.PublishOrder;
+import ee.food.crnk.domains.ordering.queries.GetClientOrders;
 import ee.food.crnk.domains.restaurants.queries.GetActiveMenu;
-import ee.food.crnk.domains.restaurants.queries.GetActiveRestaurants;
 import ee.food.crnk.resources.Menu;
 import ee.food.crnk.resources.Restaurant;
 import io.crnk.core.resource.list.ResourceList;
@@ -13,26 +15,27 @@ import lombok.val;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Optional;
 
 public class Exercise {
 
     public static void main(String[] args) {
-        // TODO parametrize this
-
         // Staging
         FoodeeClient foodeeClient = new FoodeeClient("https://api-staging.food.ee", "8SMJ3XuneAsavFx7VTxujTeGY3oGtXKTHrm03HBz/W52z+SlctRwuUKUW8g=");
-//         LocalHost
-//         FoodeeClient foodeeClient = new FoodeeClient("http://localhost:3000", "So16OMcJfVRm1lEyWqLOqT4jnh6xrQpYvU8gLEj+gLiZPWIPKw9wB00=");
-        ResourceList<Restaurant> all = new GetActiveRestaurants(foodeeClient).invoke();
-//        printAllRestaurants(foodeeClient, all);
 
+        // Returns the client account that this api k is attached to
+        long clientId = 22347L;
+
+        val aClient = new GetClient(foodeeClient, clientId).invoke();
+        val orders = new GetClientOrders(foodeeClient, clientId, OrderState.GROUP_BUILDING).invoke();
+
+        System.out.printf("Found %d Orders%n", orders.size());
 
         // NOTE: If you encounter a capacity error while exercising this endpoint
         // change the array index
-        val restaurant = (Restaurant) all.toArray()[10];
-
-        runCreateOrder(foodeeClient, restaurant);
+        //        ResourceList<Restaurant> all = new GetActiveRestaurants(foodeeClient).invoke();
+        //        printAllRestaurants(foodeeClient, all);
+        //        val restaurant = (Restaurant) all.toArray()[10];
+        //        runCreateOrder(foodeeClient, restaurant);
     }
 
     private static void runCreateOrder(FoodeeClient foodeeClient, Restaurant restaurant) {

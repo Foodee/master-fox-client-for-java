@@ -1,26 +1,19 @@
 package ee.food.crnk;
 
 import com.fasterxml.jackson.databind.util.StdDateFormat;
-import ee.food.crnk.domains.ordering.commands.CreateOrder;
-import ee.food.crnk.domains.ordering.commands.PublishOrder;
 import ee.food.crnk.exceptions.unprocessableEntity.UnprocessableEntityMapper;
-import ee.food.crnk.domains.restaurants.queries.GetActiveRestaurants;
-import ee.food.crnk.resources.Restaurant;
 import io.crnk.client.CrnkClient;
 import io.crnk.client.http.okhttp.OkHttpAdapter;
 import io.crnk.client.http.okhttp.OkHttpAdapterListener;
 import io.crnk.core.module.Module;
+import io.crnk.core.repository.ManyRelationshipRepository;
 import io.crnk.core.repository.ResourceRepository;
-import io.crnk.core.resource.list.ResourceList;
 import lombok.Data;
 import lombok.val;
 import okhttp3.*;
-import org.apache.log4j.BasicConfigurator;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.Date;
 
 @Data
 public class FoodeeClient {
@@ -97,6 +90,12 @@ public class FoodeeClient {
     public <T, I> ResourceRepository<T, I> getRepository(Class<T> resourceClass) {
         return this.jsonApiClient.getRepositoryForType(resourceClass);
     }
+
+
+    public <T, I> ManyRelationshipRepository<T, Object, I, Object> getManyRepository(Class<T> sourceClass, Class<I> targetClass) {
+        return this.jsonApiClient.getManyRepositoryForType(sourceClass, targetClass);
+    }
+
 
 
 }
