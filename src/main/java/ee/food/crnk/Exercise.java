@@ -8,6 +8,7 @@ import ee.food.crnk.domains.ordering.commands.CreateOrderItem;
 import ee.food.crnk.domains.ordering.commands.PublishOrder;
 import ee.food.crnk.domains.ordering.queries.GetClientOrders;
 import ee.food.crnk.domains.restaurants.queries.GetActiveMenu;
+import ee.food.crnk.domains.restaurants.queries.GetActiveRestaurants;
 import ee.food.crnk.resources.Menu;
 import ee.food.crnk.resources.Restaurant;
 import io.crnk.core.resource.list.ResourceList;
@@ -31,13 +32,15 @@ public class Exercise {
         val orders = new GetClientOrders(foodeeClient, clientId, OrderState.GROUP_BUILDING).invoke();
 
         System.out.printf("Found %d Orders%n", orders.size());
+    }
 
+    private static void listRestaurantsAndCreateAnOrder(FoodeeClient foodeeClient) {
         // NOTE: If you encounter a capacity error while exercising this endpoint
         // change the array index
-        //        ResourceList<Restaurant> all = new GetActiveRestaurants(foodeeClient).invoke();
-        //        printAllRestaurants(foodeeClient, all);
-        //        val restaurant = (Restaurant) all.toArray()[10];
-        //        runCreateOrder(foodeeClient, restaurant);
+        ResourceList<Restaurant> all = new GetActiveRestaurants(foodeeClient).invoke();
+        printAllRestaurants(foodeeClient, all);
+        val restaurant = (Restaurant) all.toArray()[10];
+        runCreateOrder(foodeeClient, restaurant);
     }
 
     private static void runCreateOrder(FoodeeClient foodeeClient, Restaurant restaurant) {
