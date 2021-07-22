@@ -24,8 +24,10 @@ public class Exercise {
 
         // Returns the client account that this api k is attached to
         long clientId = 22347L;
-
         val aClient = new GetClient(foodeeClient, clientId).invoke();
+
+        //  Returns the orders that are ready to be ordered from for this client (ie: in group building)
+        //  this should come down with the menu on the order as well
         val orders = new GetClientOrders(foodeeClient, clientId, OrderState.GROUP_BUILDING).invoke();
 
         System.out.printf("Found %d Orders%n", orders.size());
