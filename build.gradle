@@ -49,14 +49,32 @@ test {
     useJUnitPlatform()
 }
 
-//publishing {
-//    publications {
-//        maven(MavenPublication) {
-//            groupId = 'ee.food'
-//            artifactId = 'masterFoxClient'
-//            version = '1.0.0'
-//
-//            from components.java
-//        }
-//    }
-//}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'ee.food'
+            artifactId = 'crnk'
+            version = '1.0.0-SNAPSHOT'
+
+            from components.java
+
+            pom {
+                name = 'Foodee MasterFoxClient for Java'
+                description = 'A java implementation of our JSON:API library'
+
+                developers {
+                    developer {
+                        id = 'joe.gaudet'
+                        name = 'Joe Gaudet'
+                        email = 'joe.gaudet@food.ee'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/Foodee/master-fox-client-for-java'
+                    developerConnection = 'scm:git:ssh://example.com/my-library.git'
+                    url = 'https://github.com/Foodee/master-fox-client-for-java'
+                }
+            }
+        }
+    }
+}

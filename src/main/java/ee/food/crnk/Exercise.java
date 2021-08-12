@@ -10,9 +10,11 @@ import ee.food.crnk.domains.ordering.queries.GetClientOrders;
 import ee.food.crnk.domains.restaurants.queries.GetActiveMenu;
 import ee.food.crnk.domains.restaurants.queries.GetActiveRestaurants;
 import ee.food.crnk.resources.Menu;
+import ee.food.crnk.resources.Order;
 import ee.food.crnk.resources.Restaurant;
 import io.crnk.core.resource.list.ResourceList;
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -44,6 +46,15 @@ public class Exercise {
     }
 
     private static void runCreateOrder(FoodeeClient foodeeClient, Restaurant restaurant) {
+        final Order publishedOrder = publishOrder(foodeeClient, restaurant);
+
+        val gom = new CreateGroupOrderMember(foodeeClient, publishedOrder.getId(), "Test Person", "test@test.com").invoke();
+        val menuItem = restaurant.getActiveMenu().getMenuItems().stream().findFirst().get();
+        val orderItem = new CreateOrderItem(foodeeClient, 1, publishedOrder.getId(), menuItem.getId(), gom.getId()).invoke();
+    }
+
+    @NotNull
+    private static Order publishOrder(FoodeeClient foodeeClient, Restaurant restaurant) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         calendar.add(Calendar.DAY_OF_YEAR, 34);
@@ -61,10 +72,7 @@ public class Exercise {
 
         val publishedOrder = new PublishOrder(foodeeClient, createdOrder.getId()).invoke();
         System.out.println(publishedOrder.getState());
-
-        val gom = new CreateGroupOrderMember(foodeeClient, publishedOrder.getId(), "Test Person", "test@test.com").invoke();
-        val menuItem = restaurant.getActiveMenu().getMenuItems().stream().findFirst().get();
-        val orderItem = new CreateOrderItem(foodeeClient, 1, publishedOrder.getId(), menuItem.getId(), gom.getId()).invoke();
+        return publishedOrder;
     }
 
     private static void printAllRestaurants(FoodeeClient foodeeClient, ResourceList<Restaurant> all) {
