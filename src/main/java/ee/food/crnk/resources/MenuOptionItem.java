@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.val;
 
 import java.util.*;
+import org.javamoney.moneta.Money;
 
 @JsonApiResource(type = "menu-option-items")
 @Data
@@ -50,6 +51,18 @@ public class MenuOptionItem {
     
     @JsonProperty(value = "position")
     private Integer position;
+
+    @JsonIgnore
+    @JsonProperty(value = "client-price")
+    private Money clientPrice;
+
+    @JsonIgnore
+    @JsonProperty(value = "restaurant-price")
+    private Money restaurantPrice;
+
+    @JsonIgnore
+    @JsonProperty(value = "retail-price")
+    private Money retailPrice;
 
     /********************************************
      * Relationships

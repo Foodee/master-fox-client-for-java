@@ -25,24 +25,32 @@ public class Exercise {
         // Staging
         FoodeeClient foodeeClient = new FoodeeClient("https://api-staging.food.ee", "8SMJ3XuneAsavFx7VTxujTeGY3oGtXKTHrm03HBz/W52z+SlctRwuUKUW8g=");
 
-        // Returns the client account that this api k is attached to
-        long clientId = 22347L;
-        val aClient = new GetClient(foodeeClient, clientId).invoke();
+//        // Returns the client account that this api k is attached to
+//        long clientId = 22347L;
+//        val aClient = new GetClient(foodeeClient, clientId).invoke();
+//
+//        //  Returns the orders that are ready to be ordered from for this client (ie: in group building)
+//        //  this should come down with the menu on the order as well
+//        val orders = new GetClientOrders(foodeeClient, clientId, OrderState.GROUP_BUILDING).invoke();
+//
+//        System.out.printf("Found %d Orders%n", orders.size());
 
-        //  Returns the orders that are ready to be ordered from for this client (ie: in group building)
-        //  this should come down with the menu on the order as well
-        val orders = new GetClientOrders(foodeeClient, clientId, OrderState.GROUP_BUILDING).invoke();
-
-        System.out.printf("Found %d Orders%n", orders.size());
+        listAllRestaurants(foodeeClient);
     }
 
     private static void listRestaurantsAndCreateAnOrder(FoodeeClient foodeeClient) {
         // NOTE: If you encounter a capacity error while exercising this endpoint
         // change the array index
+        ResourceList<Restaurant> all = listAllRestaurants(foodeeClient);
+        val restaurant = (Restaurant) all.toArray()[10];
+//        runCreateOrder(foodeeClient, restaurant);
+    }
+
+    @NotNull
+    private static ResourceList<Restaurant> listAllRestaurants(FoodeeClient foodeeClient) {
         ResourceList<Restaurant> all = new GetActiveRestaurants(foodeeClient).invoke();
         printAllRestaurants(foodeeClient, all);
-        val restaurant = (Restaurant) all.toArray()[10];
-        runCreateOrder(foodeeClient, restaurant);
+        return all;
     }
 
     private static void runCreateOrder(FoodeeClient foodeeClient, Restaurant restaurant) {

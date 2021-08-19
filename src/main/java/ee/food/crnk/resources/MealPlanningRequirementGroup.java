@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.val;
 
 import java.util.*;
+import org.javamoney.moneta.Money;
 
 @JsonApiResource(type = "meal-planning-requirement-groups")
 @Data

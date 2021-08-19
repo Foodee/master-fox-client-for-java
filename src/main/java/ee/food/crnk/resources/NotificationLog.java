@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.val;
 
 import java.util.*;
+import org.javamoney.moneta.Money;
 
 @JsonApiResource(type = "notification-logs")
 @Data
@@ -58,6 +59,10 @@ public class NotificationLog {
     
     @JsonProperty(value = "events")
     private Object events;
+
+    
+    @JsonProperty(value = "provenance-id")
+    private String provenanceId;
 
     /********************************************
      * Relationships

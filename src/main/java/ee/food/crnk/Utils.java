@@ -16,7 +16,7 @@ public class Utils {
             rootNode.addChild(menuGroupNode);
 
             for (MenuItem mi : mg.getMenuItems()) {
-                val menuItemNode = new SimpleTreeNode(String.format("Mi(%d) %s", mi.getId(), mi.getName()));
+                val menuItemNode = new SimpleTreeNode(String.format("Mi(%d) %s price: %s", mi.getId(), mi.getName(), mi.getClientPrice()));
                 menuGroupNode.addChild(menuItemNode);
                 val dietaryTagsNode = new SimpleTreeNode("Dietary Tags");
                 menuItemNode.addChild(dietaryTagsNode);
@@ -33,7 +33,7 @@ public class Utils {
                     optionsNode.addChild(menuOptionGroupNode);
 
                     for (MenuOptionItem moi : mog.getMenuOptionItems()) {
-                        val menuOptionItem = new SimpleTreeNode(String.format("Moi(%d) %s%n", moi.getId(), moi.getName()));
+                        val menuOptionItem = new SimpleTreeNode(String.format("Moi(%d) %s%n  price: %s", moi.getId(), moi.getName(), moi.getClientPrice()));
                         menuOptionGroupNode.addChild(menuOptionItem);
 
                         val moiDietaryTagsNode = new SimpleTreeNode("Dietary Tags");

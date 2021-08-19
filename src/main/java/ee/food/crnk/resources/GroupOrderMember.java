@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.val;
 
 import java.util.*;
+import org.javamoney.moneta.Money;
 
 @JsonApiResource(type = "group-order-members")
 @Data
@@ -64,12 +65,12 @@ public class GroupOrderMember {
     private Boolean notifyBySMSOnDelivery;
 
     
-    @JsonProperty(value = "notification-preferences")
-    private Object notificationPreferences;
-
-    
     @JsonProperty(value = "custom-fields")
     private Object customFields;
+
+    
+    @JsonProperty(value = "notification-preferences")
+    private Object notificationPreferences;
 
     /********************************************
      * Relationships

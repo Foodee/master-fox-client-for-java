@@ -1,6 +1,8 @@
 package ee.food.crnk;
 
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
+import ee.food.crnk.deserializers.MoneyDeserializer;
 import ee.food.crnk.exceptions.unprocessableEntity.UnprocessableEntityMapper;
 import io.crnk.client.CrnkClient;
 import io.crnk.client.http.okhttp.OkHttpAdapter;
@@ -11,6 +13,7 @@ import io.crnk.core.repository.ResourceRepository;
 import lombok.Data;
 import lombok.val;
 import okhttp3.*;
+import org.javamoney.moneta.Money;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -59,6 +62,7 @@ public class FoodeeClient {
         initClient();
         setupAuthorization();
         setupJacksonForISO8601();
+        setupJacksonForMoney();
     }
 
     private void initClient() {
@@ -80,6 +84,13 @@ public class FoodeeClient {
     private void setupJacksonForISO8601() {
         val objectMapper = this.jsonApiClient.getObjectMapper();
         objectMapper.setDateFormat(new StdDateFormat().withColonInTimeZone(true));
+    }
+
+    private void setupJacksonForMoney() {
+        val objectMapper = this.jsonApiClient.getObjectMapper();
+        com.fasterxml.jackson.databind.module.SimpleModule module = new SimpleModule();
+        module.addDeserializer(Money.class, new MoneyDeserializer());
+        objectMapper.registerModule(module);
     }
 
     private void setupAuthorization() {

@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.val;
 
 import java.util.*;
+import org.javamoney.moneta.Money;
 
 @JsonApiResource(type = "order-items")
 @Data
@@ -26,6 +27,14 @@ public class OrderItem {
     /********************************************
      * Attributes
      ********************************************/
+
+    
+    @JsonProperty(value = "created-at")
+    private Date createdAt;
+
+    
+    @JsonProperty(value = "updated-at")
+    private Date updatedAt;
 
     
     @JsonProperty(value = "quantity")
