@@ -73,7 +73,8 @@ public class Exercise {
                 restaurant.getId(),
                 20,
                 "Test Event",
-                calendar.getTime()
+                calendar.getTime(),
+                20.00f
         );
         val createdOrder = new CreateOrder(foodeeClient, basicOrderParams).invoke();
         System.out.println(createdOrder.getId());

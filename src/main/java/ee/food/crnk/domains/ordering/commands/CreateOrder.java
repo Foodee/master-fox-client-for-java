@@ -32,8 +32,9 @@ public class CreateOrder extends AbstractCommand<Order> {
         private Date deadlineAt;
         private Integer numberOfPeople;
         private String eventName;
+        private Float perPersonBudget;
 
-        public BasicOrderParams(Long areaId, Long clientId, Long restaurantId, Integer numberOfPeople, String eventName, Date deliverAt) {
+        public BasicOrderParams(Long areaId, Long clientId, Long restaurantId, Integer numberOfPeople, String eventName, Date deliverAt, Float perPersonBudget) {
             this.areaId = areaId;
             this.clientId = clientId;
             this.restaurantId = restaurantId;
@@ -49,6 +50,7 @@ public class CreateOrder extends AbstractCommand<Order> {
             calendar.setTime(deliverAt);
             calendar.add(Calendar.HOUR, -2);
             this.deadlineAt = calendar.getTime();
+            this.perPersonBudget = perPersonBudget;
         }
     }
 
@@ -75,7 +77,7 @@ public class CreateOrder extends AbstractCommand<Order> {
         order.setDeliverAt(basicOrderParams.deliverAt);
         order.setName(basicOrderParams.eventName);
         order.setNumberOfPeople(basicOrderParams.numberOfPeople);
-        order.setPerPersonBudget(2000.00f);
+        order.setPerPersonBudget(basicOrderParams.perPersonBudget);
 
         order.setAllowsGuests(true);
         order.setArea(Area.id(basicOrderParams.areaId));
