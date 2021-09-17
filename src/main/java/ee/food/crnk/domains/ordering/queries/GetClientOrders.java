@@ -41,6 +41,10 @@ public class GetClientOrders extends AbstractQuery {
         this(client, clientId, Optional.empty(), Optional.of(Arrays.asList(states)));
     }
 
+    public GetClientOrders(FoodeeClient client, Long clientId, Date deliverOn, OrderState... states) {
+        this(client, clientId, Optional.of(deliverOn), Optional.of(Arrays.asList(states)));
+    }
+
     public ResourceList<Order> invoke() {
         logger.info(String.format("Looking up orders for client#%d", this.clientId));
 
